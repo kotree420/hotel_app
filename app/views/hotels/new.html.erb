@@ -1,0 +1,42 @@
+<%= render 'shared/hotel_error' %>
+
+<div class="hotel-register-container">
+  <h2>新規登録</h2>
+
+  <%= form_with model:@hotel do |f| %>
+
+    <div class="hotel-register-wrapper">
+      <%= f.label :room_name, "施設名", class: "hotel-register-label" %>
+      <%= f.text_field :room_name, placeholder:"ルーム名を入力", class: "hotel-register-input" %>
+    </div>
+
+    <div class="hotel-register-wrapper">
+      <%= f.label :room_comment, "施設紹介", class: "hotel-register-label" %>
+      <%= f.text_area :room_comment, placeholder:"ルーム説明を入力", class: "hotel-register-input" %>
+    </div>
+
+    <div class="hotel-register-wrapper">
+      <%= f.label :unit_price, "料金", class: "hotel-register-label" %>
+      <%= f.number_field :unit_price, placeholder:"一日あたりの料金を入力", class: "hotel-register-input" %>
+    </div>
+
+    <div class="hotel-register-wrapper">
+      <%= f.label :address, "住所", class: "hotel-register-label" %>
+      <%= f.text_area :address, placeholder:"住所を入力", class: "hotel-register-input" %>
+    </div>
+
+    <div class="hotel-register-wrapper">
+      <%= f.label :room_image, "画像", class: "hotel-register-label" %>
+      <label for="hotel-register-upload" class="hotel-register-upload-label">
+      画像アップロード
+      <%= f.file_field :room_image, id: "hotel-register-upload" %>
+      </label>
+    </div>
+
+    <div class="hotel-register-wrapper">
+      <%= f.submit "登録", class:"common-btn hotel-register-btn" %>
+    </div>
+
+  <% end %>
+
+</div>

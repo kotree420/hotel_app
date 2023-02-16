@@ -1,0 +1,7 @@
+ja:
+  activerecord:
+    attributes:
+      booking_result:
+        start_date: チェックイン日
+        end_date: チェックアウト日
+        number_of_people: 人数

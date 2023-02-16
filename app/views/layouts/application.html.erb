@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>HotelApp</title>
+    <title>TaskApp2</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -11,6 +11,70 @@
   </head>
 
   <body>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+
+    <header>
+      <div class="navbar">
+        <%= link_to image_tag('/logo.png', class: "logo-img"), root_path %>
+
+        <% if user_signed_in? %>
+        <span class="nav">
+            <span id="hamburger">
+              <span class="nav-icon">
+                <% if current_user.user_image.blank? %>
+                  <%= image_tag('/default-avatar.png', class: "nav-avatar-img") %>
+                <% else %>
+                  <%= image_tag current_user.user_image.url, class: "nav-avatar-img" %>
+                <% end %>
+              </span>
+              <span class="nav-profile-name">
+                <%= current_user.name %>
+              </span>
+              <svg width="16" height="16" fill="currentColor" class="nav-profile-name" viewBox="0 0 16 16">
+                <path d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z">
+                </path>
+              </svg>
+            </span>
+
+
+          <nav id="nav-menu" >
+            <ul>
+              <li><%= link_to "施設の新規登録", new_hotel_path %></li>
+              <li><%= link_to "予約済み一覧", booking_results_path %></li>
+              <li><%= link_to "登録済み一覧", hotels_path %></li>
+              <li><%= link_to "アカウント設定", edit_user_account_registration_path %></li>
+              <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+            </ul>
+          </nav>
+
+        <% else %>
+          <nav>
+            <%= link_to "ログイン", new_user_session_path, class: 'login-btn' %>
+            <%= link_to "新規登録", new_user_registration_path, class: 'common-btn signup-btn' %>
+          </nav>
+        <% end %>
+        </span>
+      </div>
+    </header>
+
     <%= yield %>
+
+    <footer>
+      <div class="footer-container">
+        <%= link_to image_tag('/logo.png', class: "footer-logo-img"), root_path %>
+        <p>Copyright © Potepan Share 2023 All rights reserved</p>
+      </div>
+    </footer>
+
+    <script>
+    function hamburger() {
+      document.getElementById('nav-menu').classList.toggle('in');
+    }
+
+    document.getElementById('hamburger').addEventListener('click' , function () {
+      hamburger();
+    } );
+    </script>
   </body>
 </html>

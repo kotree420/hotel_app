@@ -1,0 +1,47 @@
+<div class="user-container">
+
+  <h2>設定</h2>
+
+  <div class="setting-menu-container">
+    <ul class = "setting-menu-wrapper">
+      <li class="profile-menu-list"><%= link_to "アカウント", edit_user_account_registration_path, {class: "profile-menu-account"} %></li>
+      <li><%= link_to "プロフィール", edit_user_profile_registration_path, {class: "profile-menu-profile"} %></li>
+    </ul>
+
+    <div class="setting-wrapper">
+      <div class="setting-header">
+        <p>プロフィール</p>
+      </div>
+
+      <% if @user.user_image.blank? %>
+        <p><%= image_tag('/default-avatar.png', class: "profile-setting-image") %></p>
+      <% else %>
+        <p><%= image_tag(@user.user_image.url, class: "profile-setting-image") %></p>
+      <% end %>
+
+
+      <%= form_with model:@user, url:edit_user_profile_setting_registration_path do |f| %>
+      <table class="setting-body">
+        <tr>
+          <th><%= f.label :user_image, "アイコン画像" %></th>
+          <td><%= f.file_field :user_image %></td>
+        </tr>
+
+        <tr>
+          <th><%= f.label :name, "名前" %></th>
+          <td><%= f.text_field :name, value:@user.name %></td>
+        </tr>
+
+        <tr>
+          <th><%= f.label :user_comment, "自己紹介" %></th>
+          <td><%= f.text_area :user_comment %></td>
+        </tr>
+      </table>
+
+      <div>
+          <%= f.submit "更新", class: "common-btn profile-setting-btn" %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>

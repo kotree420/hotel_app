@@ -1,0 +1,26 @@
+<div class="hotel-list">
+
+  <p class="search-result"><span><%= @hotels.count %></span>件が見つかりました。</p>
+
+  <div class="hotel-container">
+    <% @hotels.each do |hotel| %>
+        <div class="hotel-wrapper">
+          <% if hotel.room_image.blank? %>
+          <p><%= image_tag('/default-image-hotel.png', class: "hotel-image") %></p>
+          <% else %>
+          <p><%= image_tag(hotel.room_image.url, class: "hotel-image") %></p>
+          <% end %>
+          <div class="hotel-information">
+            <p class="room-name"><%= hotel.room_name %></p>
+            <p class="room-address"><%= hotel.address %></p>
+            <p class="room-comment"><%= hotel.room_comment %></p>
+            <div class="room-show-link-wrapper">
+              <p class="room-unitprice">¥<%= hotel.unit_price %>〜</p>
+              <%= link_to "詳細はこちら", hotel_path(hotel.id), {class: "common-btn hotel-show-btn"} %>
+            </div>
+          </div>
+        </div>
+    <% end %>
+  </div>
+
+</div>

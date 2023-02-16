@@ -1,0 +1,64 @@
+
+<%= render 'shared/booking_result_error' %>
+
+<div class="hotel-show-container">
+  <%= link_to "← 戻る", :back , class: "back-btn"%>
+
+  <div class="hotel-show-wrapper">
+    <div class="hotel-show-image-wrapper">
+      <% if @hotel.room_image.blank? %>
+        <%= image_tag('/default-image-hotel.png', class: "hotel-show-image") %>
+      <% else %>
+        <%= image_tag(@hotel.room_image.url, class: "hotel-show-image") %>
+      <% end %>
+    </div>
+
+    <div class="hotel-show-information">
+      <div class="hotel-show-name-wrapper">
+        <p class="room-name"><%= @hotel.room_name %></p>
+        <p class="room-unitprice">¥<%= @hotel.unit_price %>〜</p>
+      </div>
+      <p class="room-address"><%= @hotel.address %></p>
+      <p class="room-comment"><%= @hotel.room_comment %></p>
+
+      <%= form_with model:@booking_result, url: confirm_booking_results_path(@booking_result) do |f| %>
+        <div class="booking-form-input-wrapper">
+          <div class="booking-form-input-group">
+            <%= f.label :start_date, "チェックイン" %>
+            <div>
+              <%= f.date_field :start_date, class: "booking-form-input" %>
+            </div>
+          </div>
+
+          <div class="booking-form-input-group">
+            <%= f.label :end_date, "チェックアウト" %>
+            <div>
+              <%= f.date_field :end_date, class: "booking-form-input" %>
+            </div>
+          </div>
+
+          <div class="booking-form-input-group">
+            <%= f.label :number_of_people, "人数" %>
+            <div class="booking-form-number">
+              <%= f.number_field :number_of_people, placeholder: "0", class: "booking-form-input" %>
+              <span>人</span>
+            </div>
+          </div>
+        </div>
+
+        <% if user_signed_in? %>
+          <%= f.hidden_field :user_id, value: current_user.id %>
+        <% end %>
+        <%= f.hidden_field :hotel_id, value: @hotel.id %>
+
+        <% if user_signed_in? %>
+          <%= f.submit "予約する", class: "common-btn booking-form-input-btn" %>
+        <% else %>
+          <%= link_to "ログイン", new_user_session_path, {class: "common-btn booking-form-login-btn"} %>
+        <% end %>
+      <% end %>
+
+    </div>
+  </div>
+
+</div>

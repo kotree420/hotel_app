@@ -5,3 +5,10 @@ ja:
         start_date: チェックイン日
         end_date: チェックアウト日
         number_of_people: 人数
+
+      hotel:
+        room_name: 施設名
+        room_comment: 施設紹介
+        unit_price: 料金
+        address: 住所
+        room_image: 画像

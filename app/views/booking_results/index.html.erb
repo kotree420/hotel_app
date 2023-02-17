@@ -19,7 +19,11 @@
         <tr>
           <td>
             <% @hotel = Hotel.find(booking_result.hotel_id) %>
-            <%= image_tag(@hotel.room_image.url, class: "list-image") %>
+            <% if @hotel.room_image.blank? %>
+              <%= image_tag('/default-image-hotel.png', class: "list-image") %>
+            <% else %>
+              <%= image_tag(@hotel.room_image.url, class: "list-image") %>
+            <% end %>
           </td>
           <td>
             <%= link_to @hotel.room_name, hotel_path(@hotel.id) %>

@@ -4,8 +4,8 @@
   旅をしよう</h1>
   <div class="search-container">
     <%= form_with url: search_path, method: :get, class: "search-form" do |f| %>
-      <%= f.text_field :area, value: nil, placeholder: "エリア名を入力", class: "area-input" %>
-      <%= f.hidden_field :word, value: nil %>
+      <%= f.text_field :area, value: nil, placeholder: "エリア名を入力", class: "search-input" %>
+      <%= f.text_field :word, value: nil, placeholder: "フリーワードを入力", class: "search-input" %>
       <%= f.submit "検索", class: "common-btn search-btn" %>
     <% end %>
   </div>

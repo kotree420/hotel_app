@@ -2,7 +2,9 @@ class HotelsController < ApplicationController
   before_action :authenticate_user!, except: [:show, :index]
 
   def index
-    @hotels = Hotel.all
+    #@hotelsをログイン中のユーザに紐づいたホテルのみに絞り込む
+    @user = current_user.id
+    @hotels = Hotel.where("user_id = #{@user}")
   end
 
   def new
@@ -20,7 +22,6 @@ class HotelsController < ApplicationController
   end
 
   def show
-    # @user = current_user
     @hotel = Hotel.find(params[:id])
     @booking_result = BookingResult.new
   end
@@ -36,6 +37,6 @@ class HotelsController < ApplicationController
 
   private
     def hotel_params
-      params.require(:hotel).permit(:room_name, :room_comment, :unit_price, :address, :room_image)
+      params.require(:hotel).permit(:room_name, :room_comment, :unit_price, :address, :room_image, :user_id)
     end
 end

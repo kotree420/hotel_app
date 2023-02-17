@@ -1,5 +1,7 @@
 <% if @hotel.errors.any? %>
   <% @hotel.errors.full_messages.each do |message| %>
-    <%= message %>
+    <ul>
+      <li><%= message %></li>
+    </ul>
   <% end %>
 <% end %>

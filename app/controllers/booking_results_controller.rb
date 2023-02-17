@@ -1,7 +1,7 @@
 class BookingResultsController < ApplicationController
   def index
-    @booking_results = BookingResult.all
-    @hotels = Hotel.all
+    @user = current_user.id
+    @booking_results = BookingResult.where("user_id = #{@user}")
   end
 
   def new

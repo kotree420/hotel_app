@@ -1,0 +1,17 @@
+<table>
+  <tr>
+    <th>予約した部屋</th>
+    <td><%= @hotel.room_name %></td>
+  </tr>
+    <tr>
+    <th>チェックイン</th>
+    <td><%= @booking_result.start_date.strftime("%Y/%m/%d") %></td>
+  </tr>
+    <tr>
+    <th>チェックアウト</th>
+    <td><%= @booking_result.end_date.strftime("%Y/%m/%d") %></td>
+  </tr>
+    <tr>
+    <th>お支払い価格</th>
+    <td><%= @booking_result.total_price %>円</td>
+</table>

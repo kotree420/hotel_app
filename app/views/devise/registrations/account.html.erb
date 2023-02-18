@@ -1,0 +1,33 @@
+<div class="user-container">
+
+  <h2>設定</h2>
+
+  <div class="setting-menu-container">
+    <ul class = "setting-menu-wrapper">
+      <li class="profile-menu-list"><%= link_to "アカウント", edit_user_account_registration_path, {class: "account-menu-account"} %></li>
+      <li><%= link_to "プロフィール", edit_user_profile_registration_path, {class: "account-menu-profile"} %></li>
+    </ul>
+
+    <div class="setting-wrapper">
+      <div class="setting-header">
+        <p>アカウント</p>
+        <div>
+          <%= image_tag('/user-edit.svg', class: "user-edit-image") %>
+          <%= link_to "編集", edit_user_registration_path, {class: "setting-header-link"} %>
+        </div>
+      </div>
+
+      <table class="setting-body">
+        <tr>
+          <th>メールアドレス</th>
+          <td><%= @user.email %></td>
+        </tr>
+        <tr>
+          <th>パスワード</th>
+          <td>*********</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+</div>

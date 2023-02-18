@@ -1,0 +1,51 @@
+<div class="list-container">
+
+  <h2>予約済みルーム一覧</h2>
+
+  <table class="list-wrapper">
+    <thead>
+      <tr class="list-header-wrapper">
+        <th>画像</th>
+        <th>施設名</th>
+        <th>紹介文</th>
+        <th>合計料金</th>
+        <th>チェックイン</th>
+        <th>チェックアウト</th>
+        <th>予約確定日時</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @booking_results.each do |booking_result| %>
+        <tr>
+          <td>
+            <% @hotel = Hotel.find(booking_result.hotel_id) %>
+            <% if @hotel.room_image.blank? %>
+              <%= image_tag('/default-image-hotel.png', class: "list-image") %>
+            <% else %>
+              <%= image_tag(@hotel.room_image.url, class: "list-image") %>
+            <% end %>
+          </td>
+          <td>
+            <%= link_to @hotel.room_name, hotel_path(@hotel.id) %>
+          </td>
+          <td>
+            <%= @hotel.room_comment %>
+          </td>
+          <td>
+            <%= booking_result.total_price %>
+          </td>
+          <td>
+            <%= booking_result.start_date.strftime("%Y/%m/%d") %>
+          </td>
+          <td>
+            <%= booking_result.end_date.strftime("%Y/%m/%d") %>
+          </td>
+          <td>
+            <%= booking_result.created_at.strftime("%Y/%m/%d %H:%M") %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+</div>

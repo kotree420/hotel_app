@@ -1,0 +1,42 @@
+<div class = "main-container">
+  <h1 class="main-title">Potepan Shareで<br>
+  まだ体験したことのない<br>
+  旅をしよう</h1>
+  <div class="search-container">
+    <%= form_with url: search_path, method: :get, class: "search-form" do |f| %>
+      <%= f.text_field :area, value: nil, placeholder: "エリア名を入力", class: "search-input" %>
+      <%= f.text_field :word, value: nil, placeholder: "フリーワードを入力", class: "search-input" %>
+      <%= f.submit "検索", class: "common-btn search-btn" %>
+    <% end %>
+  </div>
+</div>
+
+<div class="erea-container">
+  <h2 class="erea-section">おすすめのエリア</h2>
+
+  <div class="erea-btns">
+    <%= form_with url: search_path, class: "erea-form", method: :get do |f| %>
+      <%= f.hidden_field :area, value: "東京" %>
+      <%= f.hidden_field :word, value: nil %>
+      <%= f.submit "東京", class: "erea-btn erea-btn-tokyo" %>
+    <% end %>
+
+    <%= form_with url: search_path, class: "erea-form", method: :get do |f| %>
+      <%= f.hidden_field :area, value: "大阪" %>
+      <%= f.hidden_field :word, value: nil %>
+      <%= f.submit "大阪", class: "erea-btn erea-btn-osaka" %>
+    <% end %>
+
+    <%= form_with url: search_path, class: "erea-form", method: :get do |f| %>
+      <%= f.hidden_field :area, value: "京都" %>
+      <%= f.hidden_field :word, value: nil %>
+      <%= f.submit "京都", class: "erea-btn erea-btn-kyoto" %>
+    <% end %>
+
+    <%= form_with url: search_path, class: "erea-form", method: :get do |f| %>
+      <%= f.hidden_field :area, value: "札幌" %>
+      <%= f.hidden_field :word, value: nil %>
+      <%= f.submit "札幌", class: "erea-btn erea-btn-sapporo" %>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,663 @@
+/* 共通 */
+
+body,p,ul,td,th{
+  margin: 0;
+  padding: 0;
+}
+
+body,h1 {
+  font-family: Yu Gothic Medium,游ゴシック Medium,YuGothic,游ゴシック体,ヒラギノ角ゴ Pro W3,メイリオ,sans-serif;
+  overflow-x: hidden;
+}
+
+h1 {
+  font-size: 84px;
+  font-weight: 400;
+  line-height: 101px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 25px;
+  font-weight: 300;
+}
+
+header,footer {
+  background-color: #1c1d3b;
+}
+
+footer {
+  color: white;
+  height: 465px;
+  display: flex;
+  align-items: center;
+}
+
+.common-btn {
+  border-radius: 15px;
+  border: 0;
+  background-color: #ff7757;
+  color: #fff;
+}
+
+.login-btn {
+  text-decoration: none;
+  font-size: 0.9rem;
+  color: #fff;
+  margin-right: 1.5rem;
+}
+
+.signup-btn {
+  text-decoration: none;
+  font-size: 0.9rem;
+  width: 4rem;
+  height: 1.5rem;
+  padding: 0.4rem;
+
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance:textfield;
+}
+
+.room-name {
+  color: #767e86;
+  font-size: 1.7rem;
+}
+
+.room-unitprice {
+  color: #ff7757;
+  font-size: 1.5rem;
+}
+
+.room-address {
+  margin-bottom: 1rem;
+  color: #767e86;
+}
+
+.room-comment {
+  margin-bottom: 1rem;
+}
+
+.hidden_submit {
+  display: none;
+}
+
+/* 固定バー */
+
+.footer-container {
+  margin-top: 100px;
+  padding: 0 32px;
+}
+
+.footer-logo-img {
+  width: 240px;
+  margin-bottom: 16px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1440px;
+  padding: 0.5rem 32px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.logo-img {
+  width: 221px;
+}
+
+.nav {
+  position: relative;
+}
+
+#hamburger {
+  display: inline-flex;
+  align-items: center;
+}
+
+.nav-avatar-img {
+  width: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 0.5rem;
+}
+
+.nav-profile-name {
+  color: #fff;
+}
+
+#nav-menu {
+  position: absolute;
+  font-size: 14px;
+  width: 120%;
+  right: -400%;
+  background: #ffffff;
+  border: 1px solid #333333;
+  border-radius: 5px;
+  padding: 4px 0;
+  display: flex;
+  justify-content: center;
+}
+
+#nav-menu ul li {
+  list-style: none;
+}
+
+#nav-menu a {
+  display: block;
+  text-decoration: none;
+  color: #333333;
+}
+
+#nav-menu a:hover {
+  color: #ffffff;
+  background: #C0C0C0;
+}
+
+.in {
+  transform: translateX(-330%);
+}
+
+/* ファーストビュー */
+
+.main-container {
+  background-image: url(https://rails-02-sample.herokuapp.com/assets/home/cover-lg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50%;
+  height: 750px;
+  width: 100%;
+  padding-top: 70px;
+  margin-bottom: 180px;
+}
+
+.main-title {
+  font-size: 84px;
+  color: #fff;
+  text-align: center;
+}
+
+.search-container {
+  background: hsla(0,0%,100%,.4);
+  width: 700px;
+  margin: auto;
+  padding: 32px;
+}
+
+.search-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.search-input {
+  width: 100%;
+  height: 58px;
+  margin-bottom: 16px;
+  border-radius: 10px;
+  border: 0;
+  padding: 0.375rem 0.75rem;
+  box-sizing: border-box;
+}
+
+.search-btn {
+  width: 100%;
+  height: 58px;
+  padding: 6px 12px;
+}
+
+
+.erea-container{
+  padding: 0 32px;
+  margin-bottom: 260px;
+}
+
+.erea-section {
+  font-size: 44px;
+  line-height: 66px;
+  font-weight: 500;
+  border-bottom: 3px solid #ff7757;
+  width: fit-content;
+  margin-bottom: 140px;
+}
+
+.erea-btns {
+  display: flex;
+  justify-content: space-between;
+}
+
+.erea-btn-tokyo {
+  background-image: url(/tokyo.jpg);
+}
+
+.erea-btn-osaka {
+  background-image: url(/osaka.jpg);
+}
+
+.erea-btn-kyoto {
+  background-image: url(/kyoto.jpg);
+}
+
+.erea-btn-sapporo {
+  background-image: url(/sapporo.jpg);
+}
+
+.erea-form {
+  width: 23%;
+}
+
+.erea-btn {
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-size: cover;
+  border-radius: 26px;
+  border: 0;
+  height: 455px;
+  width: 100%;
+  color: #fff;
+  font-size: 28px;
+  font-weight: 600;
+}
+
+/* 検索結果ページ */
+.hotel-list {
+  width: 1440px;
+  margin: 2rem auto;
+}
+
+.search-result {
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+}
+
+.search-result span {
+  font-weight: 600;
+}
+
+.hotel-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.hotel-wrapper {
+  background: #fff8f1;
+  border-radius: 26px;
+  margin-bottom: 1rem;
+  width: 30%;
+  overflow: hidden;
+}
+
+.hotel-image {
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+}
+
+.hotel-information {
+  padding: 0.5rem;
+}
+
+.room-show-link-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hotel-show-btn {
+  display: block;
+  text-decoration: none;
+  text-align: center;
+  width: 30%;
+  height: 2rem;
+  line-height: 2rem;
+  padding: 0.5rem;
+}
+
+/* 一覧ページ */
+.list-container {
+  width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 5rem;
+}
+
+.list-wrapper {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.list-wrapper thead th {
+  border-bottom: 1px solid #000;
+  text-align: left;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.list-wrapper tbody tr td {
+  border-bottom: 1px solid #000;
+  padding: 0.5rem 0;
+}
+
+.list-image {
+  width: 100px;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  vertical-align: middle;
+}
+
+/* 登録ページ */
+
+.hotel-register-container {
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px 0 80px;
+}
+
+.hotel-register-wrapper {
+  width: 100%;
+  display: flex;
+  margin-bottom: 2rem;
+}
+
+.hotel-register-label {
+  display: block;
+  width: 40%;
+}
+
+.hotel-register-label::after {
+  content: "*";
+  color: #ff4949;
+  font-size: 14px;
+  margin-left: 4px;
+}
+
+.hotel-register-input {
+  width: 30rem;
+  height: 2.5rem;
+  border: 1px solid #C0C0C0;
+  border-radius: 10px;
+  padding: 0.25rem;
+}
+
+.hotel-register-upload-label {
+  font-size: 0.85rem;
+  background-color: #1c1d3b;
+  width: 18rem;
+  height: 1.8rem;
+  line-height: 1.8rem;
+  border: 1px solid #000000;
+  border-radius: 15px;
+  text-align: center;
+  color: #fff;
+  cursor: pointer;
+  padding: 0.3em 0;
+}
+
+#hotel-register-upload {
+  display: none;
+}
+
+.hotel-register-btn {
+  width: 100%;
+  height: 2.5rem;
+  font-weight: 500;
+}
+
+.hotel-show-container {
+  width: 1300px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 250px;
+  padding-top: 2.5rem;
+}
+
+.back-btn {
+  display: block;
+  text-decoration: none;
+  color: #0071c1;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+/* ルーム詳細ページ */
+
+.hotel-show-wrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.hotel-show-image-wrapper {
+  margin-right: 1.5rem;
+}
+
+.hotel-show-image {
+  width: 100%;
+}
+
+.hotel-show-information {
+  width: 50%;
+  background-color: #fff8f1;
+  padding: 3rem 1.5rem;
+}
+
+.hotel-show-name-wrapper {
+  display: flex;
+  justify-content: space-between;
+  font-size: 24px;
+  margin-bottom: 1rem;
+}
+
+/* 予約フォーム */
+
+.booking-form-input-wrapper {
+  display: flex;
+  justify-content: space-between;
+  background: #fff;
+  padding: 1.8rem 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.booking-form-input-group {
+  color: #767e86;
+  width: 32%;
+}
+
+.booking-form-input-group label {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.booking-form-input {
+  display: block;
+  height: 1.5rem;
+  box-sizing: border-box;
+  width: 100%;
+  height: 2rem;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+}
+
+.booking-form-input-btn {
+  display: block;
+  width: 100%;
+  font-size: 1.1rem;
+  height: 3rem;
+}
+
+.booking-form-login-btn {
+  display: block;
+  text-decoration: none;
+  text-align: center;
+  width: 100%;
+  font-size: 1.1rem;
+  height: 3rem;
+  line-height: 3rem;
+}
+
+.booking-form-number {
+  position: relative;
+}
+
+.booking-form-number span {
+  position: absolute;
+  top: 0.2rem;
+  right: 0.2rem;
+}
+
+/* 予約確認ページ */
+
+.booking-confirm-container {
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px 0 80px;
+}
+
+.booking-confirm-wrapper {
+  width: 100%;
+  display: flex;
+  margin-bottom: 2rem;
+}
+
+.booking-confirm-label {
+  display: block;
+  width: 40%;
+  font-weight: 600;
+}
+
+.booking-confirm-input {
+  width: 30rem;
+  height: 2.5rem;
+  border: 0;
+  text-align: right;
+  padding: 0;
+}
+
+.booking-confirm-input-price {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.booking-confirm-value {
+  width: 30rem;
+  height: 2.5rem;
+  text-align: right;
+}
+
+.booking-confirm-btn {
+  margin-top: 1rem;
+  width: 100%;
+  height: 2.5rem;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.booking-confirm-cansel-btn {
+  display: block;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 15px;
+  border: 1px solid #6a6a6a;
+  color: #6a6a6a;
+  margin-top: 1rem;
+  width: 100%;
+  height: 2.5rem;
+  font-weight: 500;
+}
+
+/* アカウント設定 */
+
+.user-container {
+  width: 1440px;
+  margin: 1rem auto 5rem;
+}
+
+.setting-menu-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.setting-menu-wrapper {
+  list-style-type: none;
+  border: 1px solid #dfe2e6;
+  height: fit-content;
+}
+
+.setting-menu-wrapper li {
+  padding: 1.5rem 4rem;
+}
+
+.profile-menu-list {
+  border-bottom: 1px solid #dfe2e6;
+}
+
+.account-menu-account, .profile-menu-profile {
+  text-decoration: none;
+  color: #ff7757;
+}
+
+.account-menu-profile, .profile-menu-account {
+  text-decoration: none;
+  color: #000;
+}
+
+.setting-wrapper {
+  width: 70%;
+}
+
+.setting-header {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #dfe2e6;
+}
+
+.setting-header p {
+  font-size: 25px;
+  font-weight: 300;
+}
+
+.setting-header-link {
+  text-decoration: none;
+  font-size: 22px;
+  color: #0071c1;
+}
+
+.setting-body th {
+  text-align: left;
+  padding-top: 1rem;
+  padding-right: 5rem;
+}
+
+.setting-body td{
+  padding-top: 1rem;
+}
+
+.profile-setting-image {
+  width: 20rem;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-top: 2rem;
+}
+
+.profile-setting-btn {
+  margin-top: 1.5rem;
+  width: 25rem;
+  height: 2rem;
+}
+
+@media screen and (max-width: 1080px) {
+
+}
